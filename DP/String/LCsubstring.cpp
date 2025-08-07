@@ -22,6 +22,8 @@ int LCSubStr(string &str1, string &str2){
     return ans;
 }
 
+
+//space optimization TC = O(len1 * len2) and SC = o(len2)
 int LCSubStr(string &str1, string &str2){
     int len1 = str1.length();
     int len2 = str2.length();
