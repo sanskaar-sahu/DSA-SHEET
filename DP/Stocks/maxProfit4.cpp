@@ -69,6 +69,32 @@ public:
         return dp[0][1][k];
     }
 
+    int spaceX(vector<int>& prices){
+        int n = prices.size();
+        vector<int>curr(2 , 0);
+        vector<int>next(2 , 0);
+        vector<int>next2(2 , 0);
+
+        for(int i = n-1 ; i>= 0 ; i--){
+            int profit = 0;
+            for(int buy = 0 ; buy <= 1 ; buy++){
+                    if(buy){
+                        profit = max(
+                            -prices[i] + next[0], 
+                             0 + next[1]);
+                    }else{
+                         profit = max(
+                            prices[i] + next2[1] , //sold
+                            0 + next[0]);  
+                    }
+                    curr[buy] = profit;
+            }
+            next2 = next;
+            next = curr;
+        }
+        return next[1];
+    }
+
 
 
     int maxProfit(int k, vector<int>& prices) {
