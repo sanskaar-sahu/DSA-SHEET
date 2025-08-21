@@ -1,0 +1,58 @@
+
+/* 
+ Calculate the distinct islands in a grid. An island is a group of 1s 
+ that are connected to each other horizontally or vertically. Two islands are c
+ onsidered distinct if they are not connected by any shared cells.
+ Dont take similar shapes , shape of the island to be identiacal 
+
+ Que Link : https://www.geeksforgeeks.org/problems/number-of-distinct-islands/1
+
+*/
+
+
+
+// User function Template for C++
+#include<queue>
+#include<vector>
+#include<algorithm>
+
+class Solution {
+  public:
+  
+    void dfs(int row, int col, vector<vector<int>>& grid, vector<vector<int>>& vis,
+        vector<pair<int,int>>& shape, int baseRow, int baseCol) {
+        int n = grid.size(), m = grid[0].size();
+        vis[row][col] = 1;
+        shape.push_back({row - baseRow, col - baseCol}); // store relative position
+
+        int delRow[4] = {-1, 0, 1, 0};
+        int delCol[4] = {0, -1, 0, 1};
+
+        for (int k = 0; k < 4; k++) {
+            int nrow = row + delRow[k];
+            int ncol = col + delCol[k];
+            if (nrow >= 0 && ncol >= 0 && nrow < n && ncol < m &&
+                !vis[nrow][ncol] && grid[nrow][ncol] == 1) {
+                dfs(nrow, ncol, grid, vis, shape, baseRow, baseCol);
+            }
+        }
+    }
+    
+    int countDistinctIslands(vector<vector<int>>& grid) {
+        int n = grid.size(), m = grid[0].size();
+        vector<vector<int>> vis(n, vector<int>(m, 0));
+        set<vector<pair<int,int>>> st;  // store unique shapes
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (!vis[i][j] && grid[i][j] == 1) {
+                    vector<pair<int,int>> shape;
+                    dfs(i, j, grid, vis, shape, i, j);
+                    st.insert(shape);
+                }
+            }
+        }
+        return st.size();
+        
+    }
+};
