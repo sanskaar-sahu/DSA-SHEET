@@ -32,3 +32,9 @@ public:
         return res;
     }
 };
+
+/*
+
+s = " hello world"
+res = "world hello"
+*/
