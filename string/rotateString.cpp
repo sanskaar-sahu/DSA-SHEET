@@ -10,7 +10,6 @@ public:
             string sub = res.substr(i, goal.length()); // ✅ added semicolon
             if(sub == goal) return true;
         }
-
         return false;
     }
 };
