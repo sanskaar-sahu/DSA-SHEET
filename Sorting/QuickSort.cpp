@@ -17,7 +17,6 @@ class Solution {
       void quickSort(vector<int>& arr , int low , int high){
         if(low < high){
             int partIdx = partition(arr , low , high);
-            
             quickSort(arr , low , partIdx)
             quickSort(arr , partIdx + 1 , high);
         }

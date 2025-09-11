@@ -3,5 +3,6 @@
     "files.associations": {
         "*.ejs": "html",
         "vector": "cpp"
-    }
+    },
+    "CodeGPT.apiKey": "Anthropic"
 }
