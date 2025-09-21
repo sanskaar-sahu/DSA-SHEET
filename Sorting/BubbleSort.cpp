@@ -15,7 +15,7 @@ public:
 
         for (int i = 0; i < sz; i++)
         {
-            for (int j = i + 1; j < sz; j++)
+            for (int j = 0 ; j < sz - i - 1; j++)
             {
                 if (arr[j] >= arr[j + 1])
                 {
