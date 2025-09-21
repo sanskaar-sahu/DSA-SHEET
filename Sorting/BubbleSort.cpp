@@ -19,7 +19,7 @@ public:
             {
                 if (arr[j] >= arr[j + 1])
                 {
-                    swap(arr[i], arr[j]);
+                    swap(arr[j], arr[j+1]);
                 }
             }
         }
