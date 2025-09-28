@@ -17,7 +17,7 @@ public:
 
 class Solution {
     bool Helper(Node * root){
-            // Empty tree or leaf node satisfies the property
+        // Empty tree or leaf node satisfies the property
         if (!root || (!root->left && !root->right)) return true;
 
         int leftVal = (root->left ? root->left->data : 0);

@@ -21,7 +21,7 @@ public:
         return true;
     }
     bool isSymmetric(TreeNode* root) {
-           if (!root) return true;
+        if (!root) return true;
 
         queue<TreeNode*> q;
         q.push(root);

@@ -22,7 +22,7 @@ public:
 
    }
     void flatten(TreeNode* root) {
-               if(!root) return;
+        if(!root) return;
         vector<TreeNode*> pre;
         preorder(root, pre);
 
