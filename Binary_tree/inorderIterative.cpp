@@ -18,3 +18,4 @@ class Soltuion{
           return res;
       }
 }
+};

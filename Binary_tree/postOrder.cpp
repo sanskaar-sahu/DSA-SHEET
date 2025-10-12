@@ -12,7 +12,7 @@ class Node{
 
 class Solution{
     public  : 
-      void preOrder(Node* root){
+      void postOrder(Node* root){
         if(root == nullptr){
             return;
         }

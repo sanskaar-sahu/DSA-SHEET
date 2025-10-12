@@ -12,12 +12,12 @@ class Node{
 
 class Solution{
     public  : 
-      void preOrder(Node* root){
+      void inOrder(Node* root){
         if(root == nullptr){
             return;
         }
-        preOrder(root->left);
+        inOrder(root->left);
         cout<<root->data<<" ";
-        preOrder(root->right);
+        inOrder(root->right);
         }
 }

@@ -14,7 +14,7 @@ public:
     bool res(TreeNode*root , int key, vector<int>& ans){
           if(!root) return false;
 
-          res.push_back(root->val);
+          ans.push_back(root->val);
           if(root->val == key) return true;
 
           if(res(root->left , key , ans) || res(root->right , key , ans)){

@@ -50,16 +50,6 @@ void addRightBoundary(TreeNode* root, vector<int>& res) {
     }
 }
 
-    void leftOrder(TreeNode * root , vector<int>& res){
-        if(!root) return;
-        
-        if(isLeft(root)) res.push_back(root->val);
-        else 
-
-        leftOrder(root->left , res);
-        leftOrder(root->right , res);
-    }
-
 
   vector<int>boundaryOrder(TreeNode* root){
       vector<int>res;

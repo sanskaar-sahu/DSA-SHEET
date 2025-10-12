@@ -22,7 +22,7 @@ class Codec {
         return tokens;
     }
 
-        // Helper: build tree from array representation
+    // Helper: build tree from array representation
     TreeNode* build(vector<string>& nodes, int idx) {
 
         if(idx >= nodes.size() || nodes[idx] == "x") return NULL;
