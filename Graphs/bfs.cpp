@@ -1,7 +1,7 @@
 class Solution {
 public: 
     vector<int> bfs(int start, vector<int> adj[], int n) {
-        vector<int> visited(n + 1, 0);  // n = number of nodes
+        vector<int> visited(n + 1, 0); 
         queue<int> q;
         visited[start] = 1;
         q.push(start);
@@ -19,6 +19,6 @@ public:
                 }
             }
         }
-        return res; // ✅ return vector<int>
+        return res; 
     }
 };
