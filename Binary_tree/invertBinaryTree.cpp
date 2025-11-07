@@ -9,24 +9,25 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
 class Solution {
-  
-   TreeNode* build(TreeNode* root , vector<vector<TreeNode*>>v){
-       
-       if(!root || !root->left || !root->right) return nullptr;
-       
-       return root;
-   }
-
 public:
     TreeNode* invertTree(TreeNode* root) {
-       if(!root) return nullptr;
+    if (!root) return NULL;
 
-       swap(root->left , root->right);
+    queue<TreeNode*> q;
+    q.push(root);
 
-       invertTree(root->left);
-       invertTree(root->right);
-       return root;
+    while (!q.empty()) {
+        TreeNode* node = q.front();
+        q.pop();
+
+        // Swap children
+        swap(node->left, node->right);
+
+        if (node->left) q.push(node->left);
+        if (node->right) q.push(node->right);
+    }
+
+    return root;
     }
 };
