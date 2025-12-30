@@ -1,0 +1,38 @@
+/**
+ Problem statement
+You're given two sorted arrays 'arr1' and 'arr2' of size 'n' and 'm' 
+respectively and an element 'k'.
+Find the element that would be at the 'kth' position of the combined 
+sorted array.
+Position 'k' is given according to 1 - based indexing, 
+but arrays 'arr1' and 'arr2' are using 0 - based indexing.
+
+For example :
+Input: 'arr1' = [2, 3, 45], 'arr2' = [4, 6, 7, 8] and 'k' = 4
+Output: 6
+Explanation: The merged array will be [2, 3, 4, 6, 7, 8, 45]. The element at position '4' of this array is 6. Hence we return 6.
+ */
+
+
+int kthElement(vector<int> &arr1, vector<int>& arr2, int n, int m, int k){
+        int i = 0, j = 0;
+
+    while (true) {
+        // If arr1 is exhausted
+        if (i == n) return arr2[j + k - 1];
+
+        // If arr2 is exhausted
+        if (j == m) return arr1[i + k - 1];
+
+        // If k == 1, return minimum
+        if (k == 1) return min(arr1[i], arr2[j]);
+
+        if (arr1[i] < arr2[j]) {
+            i++;
+        } else {
+            j++;
+        }
+        k--;
+    }
+    return -1;
+}
